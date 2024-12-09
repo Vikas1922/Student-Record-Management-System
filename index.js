@@ -20,7 +20,7 @@ const connection = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
     database: 'college',
-    password: 'Vik#1922'
+    password: 'XXXXX'
 });
 
 app.get('/',(req,res)=>{
