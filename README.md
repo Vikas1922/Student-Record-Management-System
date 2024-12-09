@@ -48,6 +48,14 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
 - Another setting;
 - One more setting;
 
+  ## **run the database file in your local database.
+  ## **After that open the index.js file and where does we create connection for connecting our node to database. In that connection you may create some changes
+  $ const connection = mysql.connection({
+  host: '127.0.0.1'; //This is your localhost where you run our project
+  user : 'root'; //carefully notice the username when you create new connection in your database (by-default it is 'root')
+  database: 'college' //this value is write as it is in your code
+  password: 'xxxx' //Write password when you install our database at that time you enter a password, that password will use it here!!
+
 ## Running the project
 
     $ node index.js
