@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit - Student Record!</title>
+    <style>
+      *{
+        color: white;
+      }
+      form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 500px;
+        
+      }
+      div{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 500px;
+      }
+      input{
+        padding: 5px 5px;
+        width: 200px;
+        font-size: 18px;
+        /* color: black; */
+        outline: none;
+        /* border-radius: 10px; */
+        border: none;
+        border-bottom: 1px solid green;
+        background-color: transparent;
+        
+      }
+
+      button{
+        background-color: green;
+        width: 100px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black;">
+    <h1 style="color: white; text-align: center; background-color: gray;">Edit the Student Record of - <%= result[0].name %></h1>
+    <h3 style="background-color: aquamarine; text-align: center; color: black;">Id of this Student is : <%=result[0].id%></h3>
+    <form method="post" action="http://localhost:8080/edit/<%=result[0].id%>?_method=PATCH">
+      <div>
+        <label for="name">Student Name</label>
+        <input
+          type="text"
+          name="name"
+          value="<%=result[0].name%>"
+          placeholder="Enter your name"
+          
+        />
+      </div>
+      <div>
+        <label for="class">Class</label>
+        <input
+          type="number"
+          name="studentClass"
+          value="<%= result[0].class %>"
+          placeholder="Enter your class"
+        />
+      </div>
+      <div>
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" value="<%= result[0].subject %>" placeholder="Enter your Subject" />
+      </div>
+      <div>
+        <label for="marks">Marks</label>
+        <input type="number" name="marks" value="<%= result[0].marks %>" placeholder="Enter your marks" />
+      </div>
+      <br />
+      <button>Change</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Student Only!</title>
+    <style>
+      * {
+        color: white;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 300px;
+      }
+      div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 400px;
+      }
+
+      input {
+        width: 250px;
+        height: 27px;
+        font-size: 18px;
+        /* color: black; */
+        outline: none;
+        /* border-radius: 10px; */
+        border: none;
+        border-bottom: 1px solid blue;
+        background-color: transparent;
+      }
+      button {
+        color: white;
+        background-color: blue;
+        width: 90px;
+        height: 35px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    <h1 style="text-align: center; background-color: gray; color: white">
+      Register Here...!
+    </h1>
+    <form method="post" action="http://localhost:8080/register">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="Enter Your Name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Your Email" required />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter Your Password"
+          required
+        />
+      </div>
+      <button>Register</button>
+    </form>
+
+    
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student Record!</title>
+</head>
+<style>
+    *{
+        color: white;
+    }
+    form{
+        display: flex
+;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    }
+    .header{
+        width: 100%;
+        height: 50px;
+    }
+    div{
+        display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-around;
+    }
+    input{
+        width: 250px;
+    height: 27px;
+    font-size: 18px;
+        /* color: black; */
+        outline: none;
+        /* border-radius: 10px; */
+        border: none;
+        border-bottom: 1px solid blue;
+        background-color: transparent;
+    }
+    button{
+        color: white;
+    background-color: blue;
+    width: 90px;
+    height: 35px;
+    }
+</style>
+<body style="background-color: black;">
+    <div style="background-color: gray;" class="header">
+    <h1 style="color: white; text-align: center;">Welcome! To Add Student Record</h1>
+</div>
+    <form method="post" action="http://localhost:8080/add?_method=PATCH">
+        <div>
+            <label for="id">Student Id</label>
+            <input type="number" name="id" placeholder="Enter your Id" required/>
+        </div>
+        <div>
+            <label for="name">Student Name</label>
+            <input type="text" name="name" placeholder="Enter Your Name" required/>
+        </div>
+        <div>
+            <label for="studentClass">Class</label>
+            <input type="number" name="studentClass" placeholder="Enter Your Class" required/>
+        </div>
+        <div>
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" placeholder="Enter Your Subject" required/>
+        </div>
+        <div>
+            <label for="marks">Marks</label>
+            <input type="number" name="marks" placeholder="Enter Your Marks" required/>
+        </div>
+        <br />
+        <button>Add</button>
+    </form>
+</body>
+</html>

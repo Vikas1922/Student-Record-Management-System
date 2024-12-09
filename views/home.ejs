@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Students record!</title>
+  </head>
+  <style>
+    th {
+      padding: 10px 5px;
+    }
+    button {
+      padding: 10px 10px;
+      color: white;
+    }
+    .add {
+      background-color: blue;
+    }
+    .edit {
+      background-color: green;
+
+    }
+    .delete {
+      background-color: red;
+    }
+    table {
+      margin-bottom: 30px;
+      width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .editForm,.deleteForm{
+        margin: 0px;
+    }
+  </style>
+  <body style="background-color: black">
+    <div style="background-color: gray">
+      <h1 style="text-align: center; color: white">Student Record</h1>
+    </div>
+
+    <table border="1" style="color: white">
+      <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Class</th>
+        <th>Subject</th>
+        <th>Marks</th>
+      </tr>
+      <% for(let student of result){ %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.class %></td>
+        <td><%= student.subject %></td>
+        <td><%= student.marks %></td>
+        <td>
+          <form
+            method="get"
+            action="http://localhost:8080/edit/<%=student.id%>"
+            class="editForm"
+          >
+            <button class="edit">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form
+            method="post"
+            action="http://localhost:8080/delete/<%=student.id%>?_method=DELETE"
+            class="deleteForm"
+          >
+            <button class="delete">Delete</button>
+          </form>
+        </td>
+      </tr>
+
+      <% } %>
+    </table>
+    <form method="get" action="http://localhost:8080/add">
+      <button class="add">Add Student Record</button>
+    </form>
+  </body>
+</html>
